@@ -1,6 +1,9 @@
+## To-Do with a sprinkle of Jira
+
 #### Env
 
 ```
+npm 6.14.15
 yarn 1.22.18
 node 16.14.2
 react ^18.0.0
@@ -19,3 +22,29 @@ react ^18.0.0
 - Created custom hooks and HOC for certain purposes in the application.
 - Used Formik and Yup for forms and form validation.
 - Used Jest and React Testing Library for testing. Eventhough I already knew Jest and Enzyme, I found out while researching that the enzyme adapter for react 18 is not available. Even the adapter for react 17 is an open PR. There were articles stating that it's better to move away from enzyme, This is why I learnt about React Testing Library from scratch and implemented it instead of downgrading the react version.
+
+### Deployed site on Firebase
+
+Website Link - [Click Here](https://todojira-45de6.web.app/)
+
+### To run locally
+
+Clone the project and navigate to the root directory and run the following commands:-
+
+```
+npm install
+npm start
+```
+
+or
+
+```
+yarn
+yarn start
+```
+
+### Closing notes
+
+Did all this in about 9-10 hours over a span of two days. Tried to showcase as much as I know.
+
+Happy Learning!!
