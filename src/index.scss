@@ -1,0 +1,58 @@
+html {
+  /**
+  * all the breakpoints of the web app
+  */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  /* color */
+  --deep-blue: #0d035b;
+  --deeper-blue: #000853;
+  --black: #1d1d1d;
+  --white: #ffffff;
+  --off-white: #e6e6e6;
+  --light-grey: #939aa4;
+  --lighter-grey: #cdd4da;
+  --danger: #dd3333;
+
+  /* font size */
+  --fs-base: 1rem;
+  --fs-header: 3.125rem;
+  --fs-highlight: 1.25rem;
+  --fs-small: 0.75rem;
+  --fs-button: 1.5625rem;
+
+  /* spacing */
+  --sp-tiny: 4px;
+  --sp-small: 8px;
+  --sp-medium: 12px;
+  --sp-large: 24px;
+  --sp-huge: 64px;
+}
+
+html {
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#main {
+  position: relative;
+  margin-top: 150px;
+}
+
+#_hj_feedback_container {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 70%;
+  }
+}

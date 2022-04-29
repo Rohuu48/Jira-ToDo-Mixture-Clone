@@ -1,0 +1,41 @@
+.columnContainer {
+  height: "100%";
+  border-radius: 10px;
+  margin: 5px;
+  padding-bottom: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.itemContainer {
+  overflow-y: scroll;
+}
+
+.header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: auto 10px;
+}
+
+.description {
+  margin: 20px 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: "black";
+  border-radius: 2px;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.count {
+  background-color: white;
+  color: "black";
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.item-header {
+  margin: 5px 0;
+}

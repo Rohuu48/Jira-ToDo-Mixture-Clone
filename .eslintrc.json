@@ -1,0 +1,99 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:react-hooks/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "jsx-a11y"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
+      }
+    ],
+    "indent": "off",
+    "object-curly-newline": "off",
+    "comma-dangle": ["error", "never"],
+    "implicit-arrow-linebreak": "off",
+    "arrow-parens": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "__REDUX_DEVTOOLS_EXTENSION__",
+          "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"
+        ]
+      }
+    ],
+    "space-before-function-paren": "off",
+    "func-names": "off",
+    "radix": ["error", "as-needed"],
+    "operator-linebreak": "off",
+    "global-require": "off",
+    "no-plusplus": "off",
+    "function-paren-newline": "off",
+    "wrap-iife": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-typos": "error",
+    "react/no-danger": "error",
+    "react/no-deprecated": "error",
+    "react/destructuring-assignment": "off",
+    "react/no-array-index-key": "warn",
+    "react/jsx-one-expression-per-line": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/jsx-boolean-value": "off",
+    "import/no-dynamic-require": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "arrow-body-style": "off",
+    "no-confusing-arrow": "off",
+    "react/react-in-jsx-scope": "error",
+    "react/require-default-props": [
+      2,
+      {
+        "forbidDefaultForRequired": true,
+        "ignoreFunctionalComponents": false
+      }
+    ]
+  }
+}
