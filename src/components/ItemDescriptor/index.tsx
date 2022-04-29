@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Flex, Text, Avatar, Heading, Tooltip } from "@chakra-ui/react";
 import Icon from "components/Icon";
 import { useSelector } from "react-redux";

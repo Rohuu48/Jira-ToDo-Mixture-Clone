@@ -1,6 +1,6 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import TabContainer from "../../components/Tabs";
-import { useDispatch } from "react-redux";
+import { RootStateOrAny, useDispatch } from "react-redux";
 import { getTodos } from "../../actions/todos";
 import { useSelector } from "react-redux";
 import "./dashboard.scss";
@@ -9,7 +9,7 @@ import { Flex } from "@chakra-ui/react";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state: RootStateOrAny) => state.todos);
 
   useEffect(() => {
     //dummy checking to not call dummy todo api if data is already present in persisted store

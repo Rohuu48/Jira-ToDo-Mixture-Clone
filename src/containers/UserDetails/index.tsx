@@ -1,7 +1,9 @@
-import { useSelector } from 'react-redux';
-import { Avatar, Text, Flex, AvatarBadge } from '@chakra-ui/react';
+import { RootStateOrAny, useSelector } from "react-redux";
+import { Avatar, Text, Flex, AvatarBadge } from "@chakra-ui/react";
 const UserDetails = () => {
-  let currentUser = useSelector((state) => state.auth.data.data);
+  let currentUser = useSelector(
+    (state: RootStateOrAny) => state.auth.data.data
+  );
 
   const { fullName, avatarUrl, email } = currentUser;
   return (

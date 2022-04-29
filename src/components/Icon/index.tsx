@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { memo } from "react";
 
 const Icon = memo(({ name, className = "", ...otherProps }) => {

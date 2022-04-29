@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Modal,
   ModalOverlay,
@@ -9,14 +10,21 @@ import {
   Button,
 } from "@chakra-ui/react";
 
+interface IModalProps {
+  header: string;
+  modalOpen: boolean;
+  toggleModal: Function;
+  children: JSX.Element;
+  hideFooter?: boolean;
+}
+
 const ModalContainer = ({
   header,
   modalOpen,
   toggleModal,
   children,
   hideFooter,
-  style,
-}) => {
+}: IModalProps) => {
   return (
     <Modal
       isCentered

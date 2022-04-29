@@ -17,18 +17,16 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "components/*": ["Common/Components/*"],
-      "types/*": ["Common/types/*"],
+      "components/*": ["components/*"],
+      "types/*": ["common/types/*"],
       "testing-library/*": ["@local-react-testing-library/*"],
-      "common/*": ["Common/*"],
-      "constants/*": ["Constants/*"],
-      "globalStyles/*": ["GlobalStyles/*"],
-      "helper/*": ["Helper/*"],
-      "hooks/*": ["Hooks/*"],
-      "assets/*": ["Assets/*"],
-      "context/*": ["Context/*"],
-      "route/*": ["Routes/*"],
-      "modules/*": ["Modules/*"]
+      "common/*": ["common/*"],
+      "constants/*": ["constants/*"],
+      "helper/*": ["helper/*"],
+      "hooks/*": ["hooks/*"],
+      "assets/*": ["assets/*"],
+      "context/*": ["context/*"],
+      "route/*": ["routes/*"]
     }
   },
   "include": ["src"]

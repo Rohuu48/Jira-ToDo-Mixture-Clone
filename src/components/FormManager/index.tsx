@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable camelcase */
 import React from "react";
 import * as Yup from "yup";

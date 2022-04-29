@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Avatar,
   AvatarBadge,
@@ -11,9 +12,8 @@ import ActivityColumn from "components/ActivityColumn";
 import DropdownMenu from "components/DropdownMenu";
 import ModalContainer from "components/ModalContainer";
 import ToDoForm from "containers/ToDoForm";
-import { isMobile } from "helper";
 import useModalState from "hooks/useModalState";
-import { useState } from "react";
+import useWindowDimensions from "hooks/useWindowDimensions";
 import { useDispatch, useSelector } from "react-redux";
 import "./toDoSection.scss";
 
@@ -23,7 +23,11 @@ const ToDoSection = ({ todos }) => {
   const allUsers = useSelector((state) => state.auth?.allUsers);
   const filters = useSelector((state) => state.todos?.filters);
   const activeFilter = useSelector((state) => state.todos?.activeFilter?.user);
+  const { dimensions } = useWindowDimensions();
 
+  const isMobile = () => {
+    return dimensions.width <= 576;
+  };
   const categoryFilter = filters?.category;
   let filterHeading = "Filters";
   let filterOptions = [

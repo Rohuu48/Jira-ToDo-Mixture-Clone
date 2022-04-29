@@ -2,8 +2,7 @@ import { Flex, Heading, Text } from "@chakra-ui/react";
 import { setToDoCategories } from "actions/todos";
 import ItemDescriptor from "components/ItemDescriptor";
 import ModalContainer from "components/ModalContainer";
-import PopoverContainer from "components/Popover";
-import { CATEGORY_IDENTIFIERS } from "constants";
+import { CATEGORY_IDENTIFIERS } from "constants/index";
 import useModalState from "hooks/useModalState";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -16,9 +15,17 @@ interface ActivityColumnProps {
   visibility: boolean;
 }
 
+interface EachItemProps {
+  id: string;
+  title: string;
+  description: string;
+  status: string;
+  assignee: number;
+}
+
 interface ItemProps {
   category: string;
-  item: object;
+  item: EachItemProps;
   backgroundColor?: string;
 }
 
@@ -26,7 +33,7 @@ const RenderEachItem = ({ category, item }: ItemProps) => {
   const { id, title, description } = item;
   const { modalOpen, toggleModal } = useModalState();
 
-  const onDragStart = (e, id) => {
+  const onDragStart = (e: React.DragEvent<HTMLDivElement>, id: string) => {
     e.dataTransfer.setData("text/plain", id);
     e.dataTransfer.setData("category", category);
   };
@@ -69,18 +76,22 @@ const ActivityColumn = ({
     "In progress": "rgb(255 253 196)",
     Done: "#C6F6D5",
   };
-  const onDragOver = (e) => {
+  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
   };
-  const onDrop = (ev, category) => {
+  const onDrop = (ev: React.DragEvent<HTMLDivElement>, category: any) => {
     ev.preventDefault();
     const id = ev.dataTransfer.getData("text");
     const prevCategory = ev.dataTransfer.getData("category");
     if (category !== prevCategory)
       dispatch(
         setToDoCategories({
-          category: CATEGORY_IDENTIFIERS[category],
-          prevCategory: CATEGORY_IDENTIFIERS[prevCategory],
+          category:
+            CATEGORY_IDENTIFIERS[category as keyof typeof CATEGORY_IDENTIFIERS],
+          prevCategory:
+            CATEGORY_IDENTIFIERS[
+              prevCategory as keyof typeof CATEGORY_IDENTIFIERS
+            ],
           id,
         })
       );
@@ -96,8 +107,11 @@ const ActivityColumn = ({
       style={{ display: visibility ? "flex" : "none" }}
     >
       <Flex
-        style={{ backgroundColor: categoryColor[category] }}
-        className="header"
+        style={{
+          backgroundColor:
+            categoryColor[category as keyof typeof categoryColor],
+        }}
+        className="column-heading"
         direction="row"
         justifyContent="space-between"
         alignItems="center"
@@ -108,6 +122,7 @@ const ActivityColumn = ({
       <Flex flexDirection="column" flexGrow={0} className="itemContainer">
         {Array.isArray(items) &&
           items?.map((item) => {
+            // @ts-ignore
             return <RenderEachItem category={category} item={item} />;
           })}
       </Flex>

@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import { Flex, Button, IconButton } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { useSelector } from 'react-redux';
+// @ts-nocheck
+import { useState } from "react";
+import { Flex, Button, IconButton } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const [display, changeDisplay] = useState('none');
+  const [display, changeDisplay] = useState("none");
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return (
     <Flex boxShadow="0 0.5rem 1rem rgba(0, 0, 0, 0.15)">
       <Flex justify="flex-end" align="center" left="auto">
         {/* Desktop */}
-        <Flex display={['none', 'none', 'flex', 'flex']}>
+        <Flex display={["none", "none", "flex", "flex"]}>
           <Link to="/">
             <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
               Home
@@ -26,7 +27,8 @@ const Navbar = () => {
                   variant="ghost"
                   aria-label="Login"
                   my={5}
-                  w="100%">
+                  w="100%"
+                >
                   Log in
                 </Button>
               </Link>
@@ -37,7 +39,8 @@ const Navbar = () => {
                   variant="ghost"
                   aria-label="Signup"
                   my={5}
-                  w="100%">
+                  w="100%"
+                >
                   Sign up
                 </Button>
               </Link>
@@ -50,7 +53,8 @@ const Navbar = () => {
                 variant="ghost"
                 aria-label="Dashboard"
                 my={5}
-                w="100%">
+                w="100%"
+              >
                 Dashboard
               </Button>
             </Link>
@@ -63,8 +67,8 @@ const Navbar = () => {
           size="lg"
           mr={2}
           icon={<HamburgerIcon />}
-          onClick={() => changeDisplay('flex')}
-          display={['flex', 'flex', 'none', 'none']}
+          onClick={() => changeDisplay("flex")}
+          display={["flex", "flex", "none", "none"]}
         />
       </Flex>
 
@@ -79,7 +83,8 @@ const Navbar = () => {
         top="0"
         left="0"
         overflowY="auto"
-        flexDir="column">
+        flexDir="column"
+      >
         <Flex justify="flex-end">
           <IconButton
             mt={2}
@@ -87,7 +92,7 @@ const Navbar = () => {
             aria-label="Open Menu"
             size="lg"
             icon={<CloseIcon />}
-            onClick={() => changeDisplay('none')}
+            onClick={() => changeDisplay("none")}
           />
         </Flex>
 
@@ -106,7 +111,8 @@ const Navbar = () => {
                   variant="ghost"
                   aria-label="Login"
                   my={5}
-                  w="100%">
+                  w="100%"
+                >
                   Log in
                 </Button>
               </Link>
@@ -117,7 +123,8 @@ const Navbar = () => {
                   variant="ghost"
                   aria-label="Signup"
                   my={5}
-                  w="100%">
+                  w="100%"
+                >
                   Sign up
                 </Button>
               </Link>
@@ -130,7 +137,8 @@ const Navbar = () => {
                 variant="ghost"
                 aria-label="Dashboard"
                 my={5}
-                w="100%">
+                w="100%"
+              >
                 Dashboard
               </Button>
             </Link>
